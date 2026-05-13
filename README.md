@@ -20,3 +20,18 @@ Caro AI using Minimax and Alpha-Beta Pruning
 
 ```bash
 python source_code/main.py
+
+## Cấu trúc thư mục
+
+```text
+23020287_KieuDoanLuong_CaroAI/
+│
+├── source_code/
+│   ├── board.py
+│   ├── game_rules.py
+│   ├── ui_console.py
+│   └── main.py
+│
+├── README.md
+├── requirements.txt
+└── .gitignore
