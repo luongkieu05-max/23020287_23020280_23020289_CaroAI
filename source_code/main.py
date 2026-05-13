@@ -14,7 +14,7 @@ from game_rules import get_game_result
 from ui_console import get_player_move
 
 
-def get_ai_move(board):
+def get_ai_move(board):  # sau này sẽ thay thành Minimax hoặc anpha - beta 
     """
     Hàm chọn nước đi cho máy.
 
