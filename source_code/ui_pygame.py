@@ -10,6 +10,8 @@ import pygame
 
 from board import create_board, make_move, is_valid_move, PLAYER, AI, BOARD_SIZE
 from game_rules import get_game_result
+from ai_minimax import best_move
+from alpha_beta import best_move_alpha_beta
 
 
 # Kích thước mỗi ô cờ
@@ -30,19 +32,17 @@ BLUE = (70, 130, 180)
 RED = (220, 50, 50)
 
 
-def get_ai_move(board):
+def get_ai_move(board, ai_mode):
     """
-    Hàm chọn nước đi tạm thời cho máy.
-
-    Hiện tại máy đánh vào ô trống đầu tiên tìm được.
-    Sau này nhóm sẽ thay bằng Minimax hoặc Alpha-Beta.
+    Chọn nước đi cho máy theo chế độ AI đã chọn.
     """
-    for row in range(BOARD_SIZE):
-        for col in range(BOARD_SIZE):
-            if board[row][col] == ".":
-                return row, col
+    if ai_mode == "MINIMAX":
+        return best_move(board, depth=2)
 
-    return None, None
+    if ai_mode == "ALPHA_BETA":
+        return best_move_alpha_beta(board, depth=3)
+
+    return None
 
 
 def draw_board(screen, board, font):
@@ -122,15 +122,19 @@ def show_result_message(result):
     return "Luot nguoi choi X"
 
 
-def main():
+def main(ai_mode="ALPHA_BETA"):
     """
     Hàm chính chạy giao diện pygame.
+
+    Tham số:
+    - ai_mode: "MINIMAX" hoặc "ALPHA_BETA"
     """
 
     pygame.init()
 
+    mode_label = "Minimax" if ai_mode == "MINIMAX" else "Alpha-Beta"
     screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-    pygame.display.set_caption("Caro AI - Minimax Alpha-Beta")
+    pygame.display.set_caption(f"Caro AI - {mode_label}")
 
     font = pygame.font.SysFont(None, 48)
     message_font = pygame.font.SysFont(None, 32)
@@ -138,7 +142,7 @@ def main():
     board = create_board()
     running = True
     game_over = False
-    message = "Luot nguoi choi X"
+    message = f"Che do: {mode_label} | Luot nguoi choi X"
 
     while running:
         draw_board(screen, board, font)
@@ -170,7 +174,7 @@ def main():
                             continue
 
                         # Máy đánh
-                        ai_row, ai_col = get_ai_move(board)
+                        ai_row, ai_col = get_ai_move(board, ai_mode)
 
                         if ai_row is not None and ai_col is not None:
                             make_move(board, ai_row, ai_col, AI)
@@ -180,7 +184,7 @@ def main():
                             message = show_result_message(result)
                             game_over = True
                         else:
-                            message = "Luot nguoi choi X"
+                            message = f"Che do: {mode_label} | Luot nguoi choi X"
 
                     else:
                         message = "O nay da co quan. Hay chon o khac."
