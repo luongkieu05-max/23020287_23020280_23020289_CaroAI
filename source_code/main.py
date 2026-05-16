@@ -2,25 +2,33 @@
 # File: main.py
 # Chức năng:
 # - File chạy chính của chương trình
-# - Chọn chế độ AI (Minimax / Alpha-Beta)
-# - Khởi động giao diện pygame
+# - Menu console: chọn chế độ AI, chơi pygame, chơi lại hoặc thoát
 # ===============================
 
 from ui_pygame import main as run_pygame
 
 
+def show_menu():
+    """In menu chọn chế độ trên console."""
+    print()
+    print("===== CARO AI =====")
+    print("1. Minimax")
+    print("2. Alpha-Beta Pruning")
+    print("0. Thoat chuong trinh")
+    print()
+
+
 def choose_ai_mode():
     """
-    Cho người dùng chọn chế độ AI trước khi mở pygame.
-    1: Minimax
-    2: Alpha-Beta Pruning
+    Cho người dùng chọn chế độ AI trên console.
+    Trả về "MINIMAX", "ALPHA_BETA" hoặc None nếu chọn thoát.
     """
     while True:
-        print("===== CHON CHE DO AI =====")
-        print("1. Minimax")
-        print("2. Alpha-Beta Pruning")
+        show_menu()
+        choice = input("Nhap lua chon cua ban: ").strip()
 
-        choice = input("Nhap lua chon cua ban: ")
+        if choice == "0":
+            return None
 
         if choice == "1":
             print("Ban da chon che do Minimax")
@@ -34,6 +42,15 @@ def choose_ai_mode():
 
 
 if __name__ == "__main__":
-    ai_mode = choose_ai_mode()
-    run_pygame(ai_mode)
+    while True:
+        ai_mode = choose_ai_mode()
+
+        if ai_mode is None:
+            print("Tam biet!")
+            break
+
+        run_pygame(ai_mode)
+
+        print()
+        print("Van choi da ket thuc. Ban co the chon che do moi.")
 

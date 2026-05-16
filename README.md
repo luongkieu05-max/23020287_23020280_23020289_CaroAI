@@ -47,7 +47,7 @@ Cài thư viện (nếu dùng pygame):
 pip install -r requirements.txt
 ```
 
-Chạy chương trình (chọn `1` Minimax hoặc `2` Alpha-Beta trên console, sau đó mở pygame):
+Chạy chương trình (menu console: `1` Minimax, `2` Alpha-Beta, `0` thoát; sau mỗi ván có thể chọn lại):
 
 ```bash
 python source_code/main.py
