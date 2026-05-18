@@ -13,8 +13,7 @@ Caro AI using Minimax and Alpha-Beta Pruning
 | File/Thư mục | Chức năng |
 |---|---|
 | `source_code/main.py` | File chạy chính, mở pygame |
-| `source_code/board.py` | Biểu diễn bàn cờ, tạo bàn cờ, in bàn cờ, kiểm tra ô hợp lệ |
-| `source_code/game_rules.py` | Quy tắc trò chơi, kiểm tra thắng/thua/hòa |
+| `source_code/board.py` | Biểu diễn bàn cờ, tạo bàn cờ, in bàn cờ, kiểm tra ô hợp lệ, Quy tắc trò chơi, kiểm tra thắng/thua/hòa |
 | `source_code/evaluation.py` | Hàm đánh giá trạng thái bàn cờ |
 | `source_code/ai_minimax.py` | Thuật toán Minimax |
 | `source_code/alpha_beta.py` | Thuật toán Alpha-Beta Pruning |
@@ -26,7 +25,6 @@ Caro AI using Minimax and Alpha-Beta Pruning
 │
 ├── source_code/
 │   ├── board.py
-│   ├── game_rules.py
 │   ├── evaluation.py
 │   ├── ai_minimax.py
 │   ├── alpha_beta.py
