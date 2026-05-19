@@ -324,6 +324,12 @@ class CaroPygame:
             pygame.display.update()
 
             if self.game_over:
+                # Vẽ lại bàn cờ lần cuối để chắc chắn nước đi cuối cùng được hiển thị đầy đủ
+                self.draw_grid()
+                self.draw_pieces()
+                self.draw_status()
+                pygame.display.update()
+                
                 if self.win_positions: sleep(0.7)
                 txt = "YOU WIN" if self.win_positions and self.board[self.win_positions[0][0]][self.win_positions[0][1]] == 'X' else "AI WIN" if self.win_positions else "DRAW"
                 result = show_game_over(self.screen, txt)
