@@ -79,6 +79,8 @@ python source_code/Benchmark.py
 | `Benchmark.py` | Benchmark Minimax vs Alpha-Beta trên bàn mẫu. |
 | `requirements.txt` | Phụ thuộc Python (pygame). |
 
-## Ghi chú nộp bài
 
+<<<<<<< HEAD
 - Nếu đề bài yêu cầu `report.pdf`, thêm file vào thư mục gốc và cập nhật danh sách nộp tương ứng.
+=======
+>>>>>>> 3e6e68cd1cc5d8dac9abd32bd8fa473596c8f222
