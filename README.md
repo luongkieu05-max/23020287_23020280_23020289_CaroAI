@@ -21,12 +21,12 @@ Game **Caro** (bàn cờ 9×9, thắng khi có **4 quân** liên tiếp theo nga
 ## Yêu cầu môi trường
 
 - **Python 3** (khuyến nghị 3.10 trở lên).
-- Thư viện **pygame**.
+- Thư viện **pygame** (khai báo trong `requirements.txt`).
 
-Cài pygame (trong môi trường ảo nếu có):
+Cài phụ thuộc (nên dùng môi trường ảo `.venv`):
 
 ```bash
-pip install pygame
+pip install -r requirements.txt
 ```
 
 ## Cách chạy
@@ -64,6 +64,7 @@ python source_code/Benchmark.py
 │   ├── alpha_beta.py     # Alpha-Beta + get_best_move
 │   └── Benchmark.py      # Giao diện đo / so sánh thuật toán (tùy chọn)
 ├── README.md
+├── requirements.txt
 └── .gitignore
 ```
 
@@ -76,8 +77,8 @@ python source_code/Benchmark.py
 | `ai_minimax.py` | Thuật toán Minimax. |
 | `alpha_beta.py` | Alpha-Beta pruning. |
 | `Benchmark.py` | Benchmark Minimax vs Alpha-Beta trên bàn mẫu. |
+| `requirements.txt` | Phụ thuộc Python (pygame). |
 
 ## Ghi chú nộp bài
 
 - Nếu đề bài yêu cầu `report.pdf`, thêm file vào thư mục gốc và cập nhật danh sách nộp tương ứng.
-- Có thể tạo `requirements.txt` với nội dung `pygame` để cài một lệnh: `pip install -r requirements.txt`.
