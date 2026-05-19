@@ -77,7 +77,4 @@ python source_code/Benchmark.py
 | `alpha_beta.py` | Alpha-Beta pruning. |
 | `Benchmark.py` | Benchmark Minimax vs Alpha-Beta trên bàn mẫu. |
 
-## Ghi chú nộp bài
 
-- Nếu đề bài yêu cầu `report.pdf`, thêm file vào thư mục gốc và cập nhật danh sách nộp tương ứng.
-- Có thể tạo `requirements.txt` với nội dung `pygame` để cài một lệnh: `pip install -r requirements.txt`.
